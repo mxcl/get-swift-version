@@ -19,3 +19,7 @@ jobs:
     - uses: ./
       id: swift
     - run: echo Swift ${{ steps.swift.outputs.version }}
+    - run: echo Major = ${{ steps.swift.outputs.major-version }}
+    - run: echo Minor = ${{ steps.swift.outputs.minor-version }}
+    - run: echo Patch = ${{ steps.swift.outputs.patch-version }}
+    - run: echo Marketing = ${{ steps.swift.outputs.marketing-version }}

@@ -8,8 +8,17 @@ inputs:
       Fails if the active Swift does not satisfy this semantically
       versioned constraint.
 outputs:
-  swift-version:
+  version:
     description: The semantic version of the active Swift version.
+  major-version:
+    description: Eg. Outputs `5` for Swift 5.4.1
+  minor-version:
+    description: Eg. Outputs `4` for Swift 5.4.1
+  patch-version:
+    description: Eg. Outputs `1` for Swift 5.4.1
+  marketing-version:
+    description: Eg. Outputs `5.4` for Swift 5.4.1
+
 runs:
   using: 'node12'
   main: 'index.js'
