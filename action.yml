@@ -1,0 +1,15 @@
+name: get-swift-version
+description: >
+  Sets an output for the active Swift version.
+  Allows an `requires` input for testing the version semantically.
+inputs:
+  requires:
+    description: >
+      Fails if the active Swift does not satisfy this semantically
+      versioned constraint.
+outputs:
+  swift-version:
+    description: The semantic version of the active Swift version.
+runs:
+  using: 'node12'
+  main: 'index.js'
