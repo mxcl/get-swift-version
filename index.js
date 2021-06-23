@@ -32,6 +32,8 @@ async function run() {
   process.stdout.write(`::set-output name=patch-version::${swift.patch}\n`)
   process.stdout.write(`::set-output name=marketing-version::${swift.major}.${swift.minor}\n`)
 
+  process.stdout.write(`» Swift ${swift}`)
+
   const constraint = process.env['INPUT_REQUIRES'].trim()
 
   if (constraint && !semver.satisfies(swift, constraint)) {
