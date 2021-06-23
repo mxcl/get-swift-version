@@ -27,6 +27,10 @@ async function run() {
   if (!swift) throw new Error(`couldn’t determine Swift version [\`${stdout}\`]`)
 
   process.stdout.write(`::set-output name=version::${swift}\n`)
+  process.stdout.write(`::set-output name=major-version::${swift.major}\n`)
+  process.stdout.write(`::set-output name=minor-version::${swift.minor}\n`)
+  process.stdout.write(`::set-output name=patch-version::${swift.patch}\n`)
+  process.stdout.write(`::set-output name=marketing-version::${swift.major}.${swift.minor}\n`)
 
   const constraint = process.env['INPUT_REQUIRES'].trim()
 
