@@ -1,7 +1,7 @@
 name: get-swift-version
 description: >
-  Sets an output for the active Swift version.
-  Allows an `requires` input for testing the version semantically.
+  Sets various outputs for the active Swift version.
+  Optionally provides a `requires` input for enforcing the active version semantically.
 inputs:
   requires:
     description: >
