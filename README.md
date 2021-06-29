@@ -48,6 +48,21 @@ jobs:
 
 If the Swift version is not >=5.4 and < 5.5 the action will fail.
 
+# Suggested with `actions/cache`
+
+```yaml
+- uses: mxcl/get-swift-version@v1
+  id: swift
+- uses: actions/cache@v2
+  with:
+    path: .build
+    key: ${{ runner.os }}-swift-${{ steps.swift.outputs.marketing-version }}-${{ hashFiles('Package.resolved') }}
+    restore-keys: ${{ runner.os }}-swift-${{ steps.swift.outputs.marketing-version }}
+```
+
+With Swift >=5.5 this will save you quite a bit of build time while ensuring major changes
+to the build files formats with new marketing versions will not break your CI.
+
 # The `marketing-version` is more useful than you think
 
 ```yaml
