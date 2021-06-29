@@ -58,6 +58,7 @@ If the Swift version is not >=5.4 and < 5.5 the action will fail.
     path: .build
     key: ${{ runner.os }}-swift-${{ steps.swift.outputs.marketing-version }}-${{ hashFiles('Package.resolved') }}
     restore-keys: ${{ runner.os }}-swift-${{ steps.swift.outputs.marketing-version }}
+  if: ${{ steps.swift.outputs.marketing-version > 5.1 }}
 ```
 
 With Swift >=5.5 this will save you quite a bit of build time while ensuring major changes
