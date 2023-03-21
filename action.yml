@@ -20,5 +20,5 @@ outputs:
     description: Eg. Outputs `5.4` for Swift 5.4.1
 
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: node16
+  main: index.js
