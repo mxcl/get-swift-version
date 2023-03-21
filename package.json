@@ -1,6 +1,7 @@
 {
   "main": "index.js",
   "dependencies": {
+    "@actions/core": "^1.10.0",
     "semver": "^6.3.0"
   }
 }
